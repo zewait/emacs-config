@@ -1,0 +1,270 @@
+((("loop-list" .
+   [1 0 0 0 0 0 0 0 0])
+  ("l" .
+   [1])
+  ("achead:include-directories" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("doc" .
+   [0 0 2])
+  ("system" .
+   [0 0 0 0 0 1])
+  ("for" .
+   [2 0 0])
+  ("loop" .
+   [2 0 0 0])
+  ("system-c-headers" .
+   [0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1])
+  ("s" .
+   [1])
+  ("linum-mode" .
+   [0 0 0 0 0 0 0 0 1 0])
+  ("abc" .
+   [1 0 0])
+  ("hello1" .
+   [1 0 0 0 0 0])
+  ("name" .
+   [5 0 0 0])
+  ("switch-to-buffer-other-window" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 2])
+  ("read-from-minibuffer" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0])
+  ("let" .
+   [4 0 0])
+  ("from-name" .
+   [1 0 0 0 3 0 0 0 2])
+  ("greeting" .
+   [12 0 0 0 2 0 0 4])
+  ("other-window" .
+   [0 0 0 0 0 0 0 0 0 0 0 5])
+  ("your-name" .
+   [4 0 0 1 3 0 0 0 3])
+  ("%s!n" .
+   [1 0 0 0])
+  ("format" .
+   [7 0 0 0 0 0])
+  ("insert" .
+   [10 0 0 0 0 0])
+  ("erase-buffer" .
+   [2 0 0 0 0 1 0 0 0 0 0 1])
+  ("ede-minor-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("cedet" .
+   [1 0 0 0 0])
+  ("lambda" .
+   [1 0 0 0 0 1])
+  ("c-mode-var" .
+   [0 0 0 0 0 0 0 0 0 1])
+  ("listp" .
+   [0 0 0 0 1])
+  ("dolist" .
+   [0 0 0 0 0 1])
+  ("eval-after-load" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("semantic-add-system-include" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 3 1 0 1 0 0 0 0 0 0 0 3])
+  ("setup-cedet" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("load" .
+   [1 0 0 0])
+  ("~/.emacs.d/site-lisp/" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("Info-directory-list" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("file-name-as-directory" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("cedet-root-path" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("setq" .
+   [3 0 0 0])
+  ("global-semantic-stickyfunc-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("global-semantic-decoration-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("global-semantic-highlight-func-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("global-semantic-idle-completions-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("global-semantic-idle-summary-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("semantic-default-submodes" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 1 0 0 0 0])
+  ("add-to-" .
+   [0 0 0 0 0 0 1])
+  ("ecb" .
+   [1 0 0])
+  ("re" .
+   [3 0])
+  ("expand-file-name" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0])
+  ("indent-tabs-mode" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("tab-width" .
+   [1 0 0 0 0 0 0 0 0])
+  ("setq-default" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("add_obj" .
+   [1 2 0 2 1 0 1])
+  ("ass" .
+   [0 1 0])
+  ("add" .
+   [11 2 0])
+  (":include-path" .
+   [1 0 0 0 0 0 0 0 0 0 1 0 0])
+  (":file" .
+   [1 0 0 0 0])
+  ("ede-cpp-root-project" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("ap" .
+   [1 0])
+  ("de" .
+   [1 0])
+  ("my:ac-c-header-init" .
+   [0 0 0 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("variable_index" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("my:flymake-google-init" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("flymake-google-cpplint-load" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("flymake-google-cpplint" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3])
+  ("fl" .
+   [3 0])
+  ("ac-sources" .
+   [5 0 0 0 0 0 1 0 0 0])
+  ("c++-mode-hook" .
+   [0 0 0 0 0 1 0 0 0 0 2 1 1])
+  ("c-mode-hook" .
+   [0 0 0 0 0 0 0 0 0 2 4])
+  ("my:ac-c-head-init" .
+   [0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("c++-mode" .
+   [0 0 0 0 0 0 0 1])
+  ("add-hook" .
+   [2 0 0 0 0 4 2 9])
+  ("ac-source" .
+   [0 0 0 0 0 0 0 0 5])
+  ("add-to-list" .
+   [13 0 0 0 0 0 0 0 0 2 5])
+  ("auto-complete-c-headers" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 2])
+  ("defun" .
+   [17 0 0 0 0])
+  ("yas-global-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("yasnippet" .
+   [1 0 0 0 0 0 0 0 0])
+  ("require" .
+   [5 0 0 0 1 0 10])
+  ("ac-config-default" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("while" .
+   [5 0 0 0 1])
+  ("std" .
+   [1 0 1])
+  ("defalias" .
+   [1 0 0 0 0 0 0 0])
+  ("yes-or-no-p" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("y-or-n-p" .
+   [0 0 0 0 0 0 0 1])
+  ("load-path" .
+   [1 0 0 0 0 0 0 2 1])
+  ("auto-complete-clang" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("fi" .
+   [1 0])
+  ("in" .
+   [4 0])
+  ("define-key" .
+   [2 0 0 0 0 0 0 0 0 0])
+  ("global-map" .
+   [0 0 0 0 0 0 0 0 0 1])
+  ("kbd" .
+   [2 0 0])
+  ("iedit-mode" .
+   [0 0 0 0 1 0 0 0 0 0])
+  ("custom-set-variables" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0])
+  ("flymake-google-cpplint-command" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("google-c-style" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 3])
+  ("with" .
+   [2 0 0 0])
+  ("c-mode-common-hook" .
+   [2 0 0 0 0 0 0 0 0 0 5 1 0 0 0 1 0 0])
+  ("google-make-newline-indent" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("google-set-c-style" .
+   [0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0])
+  ("semantic-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("define" .
+   [4 0 0 0 0 0])
+  ("function" .
+   [5 0 0 0 0 0 0 0])
+  ("se" .
+   [2 0])
+  ("semantic" .
+   [2 0 0 0 0 0 0 2])
+  ("complete" .
+   [2 0 0 0 0 0 0 0])
+  ("this" .
+   [2 0 0 0])
+  ("ac-source-semantic" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3])
+  ("my:add-semantic-to-autocomplete" .
+   [0 0 0 1 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("c-mode" .
+   [1 0 0 0 0 0])
+  ("global-ede-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("global-semantic" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("global-semanticdb-minor-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("global-semantic-idle-scheduler-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("include" .
+   [6 0 0 0 0 0 0])
+  ("semantic/bovine/gcc" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("semantic/bovine" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("c-mode-base-map" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("newline-and-indent" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("void" .
+   [1 0 0 0])
+  ("getTisp" .
+   [1 0 0 0 0 0 0])
+  ("help" .
+   [2 0 0 0])
+  ("h" .
+   [1])
+  ("*test*" .
+   [2 0 0 0 0 0])
+  ("hello" .
+   [1 0 0 0 0])
+  ("list-of-names" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("mapcar" .
+   [2 0 0 0 0 0])
+  ("goto-char" .
+   [1 0 0 0 0 0 0 0 0])
+  ("point-min" .
+   [1 0 0 0 0 0 0 0 0])
+  ("search" .
+   [1 0 0 0 0 0])
+  ("search-forward" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("replace-match" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("replace-hello-by-bonjour" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("nil" .
+   [1 0 0])
+  ("ac-source-c-headers" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))

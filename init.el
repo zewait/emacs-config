@@ -3,7 +3,8 @@
 ;;=============
 (require 'cc-mode)
 (setq c-default-style "linux"
-      c-basic-offset 4)
+      ;c-basic-offset 4
+	  tab-width 4)
 (setq-default tab-width 4 indent-tabs-mode t)
 ;; automatic indentation                                                
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
@@ -35,6 +36,13 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ; initialize package.el
 (package-initialize)
+;; trun on undo-tree mode
+(require 'undo-tree)
+(global-undo-tree-mode)
+;; evil mode
+(require 'evil)
+(evil-mode 1)
+
 ; start auto-complete with emacs
 (require 'auto-complete)
 ; do default config for auto-complete

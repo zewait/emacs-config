@@ -3,7 +3,7 @@
 ;;=============
 (require 'cc-mode)
 (setq c-default-style "linux"
-      ;c-basic-offset 4
+      c-basic-offset 4
 	  tab-width 4)
 (setq-default tab-width 4 indent-tabs-mode t)
 ;; automatic indentation                                                
@@ -20,6 +20,7 @@
 ;;==========
 ;; constant
 ;;==========
+; gcc -xc++ -E -v -
 (defconst SYSTEM-C-HEADERS '("/APPLICATIONS/Xcode.app/Contents/Developer/Toolchain\
 s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/include" "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" "/usr/include" "/System/Library/Frameworks" "/Library/Frameworks"))
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -38,7 +39,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; install packages
 (defconst PACKAGES-INIT
-  '(auto-complete
+  '(autopair
+	auto-complete
 	auto-complete-c-headers
 	ecb
 	iedit
@@ -57,6 +59,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (install-packages)
 	
 
+;; trun on autopair mode
+(require 'autopair)
+(autopair-global-mode)
 ;; trun on undo-tree mode
 (require 'undo-tree)
 (global-undo-tree-mode)

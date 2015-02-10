@@ -20,9 +20,9 @@
 ;;==========
 ;; constant
 ;;==========
-(setq system-c-headers '("/Applications/Xcode.app/Contents/Developer/Toolchain\
+(defconst SYSTEM-C-HEADERS '("/APPLICATIONS/Xcode.app/Contents/Developer/Toolchain\
 s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/6.0/include" "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include" "/usr/include" "/System/Library/Frameworks" "/Library/Frameworks"))
-
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ; start package.el with emacs
 (require 'package)
@@ -30,12 +30,33 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
 				 ("gnu" . "http://elpa.gnu.org/packages/")
 				 ("marmalade" . "https://marmalade-repo.org/packages/")))
-
 ;; Install a hook running post-init.el *after* initialization took place
 ;(add-hook 'after-init-hook (lambda () (load "post-init.el")))
 
 ; initialize package.el
 (package-initialize)
+
+;; install packages
+(defconst PACKAGES-INIT
+  '(auto-complete
+	auto-complete-c-headers
+	ecb
+	iedit
+	undo-tree
+	evil
+	yasnippet))
+
+(defun install-packages ()
+  "Install all required packages."
+  (interactive)
+  (unless package-archive-contents
+	(package-refresh-contents))
+  (dolist (package PACKAGES-INIT)
+	(unless (package-installed-p package)
+	  (package-install package))))
+(install-packages)
+	
+
 ;; trun on undo-tree mode
 (require 'undo-tree)
 (global-undo-tree-mode)
@@ -52,7 +73,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (defun my:ac-c-header-init ()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
-  (loop for x in system-c-headers do
+  (loop for x in SYSTEM-C-HEADERS do
 		(add-to-list 'achead:include-directories x)))
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
@@ -69,7 +90,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;;=======
 (require 'setup-cedet)
 
-(mapcar 'semantic-add-system-include system-c-headers)
+(mapcar 'semantic-add-system-include SYSTEM-C-HEADERS)
 
 
 (add-hook 'c-mode-hook (lambda ()
@@ -84,8 +105,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
 ;; ede config
 ; create a project for our program.
-(ede-cpp-root-project "my project" :file "~/Documents/workspace/cpp/demos/my_program/src/main.cpp"
-		            :include-path '("/../my_inc"))
+;(ede-cpp-root-project "my project" :file "~/Documents/workspace/cpp/demos/my_program/src/main.cpp"
+	;	            :include-path '("/../my_inc"))
 ; you can use system-include-path for setting up the system header file locations.
 ; turn on automatic reparsing of open buffers in semantic
 

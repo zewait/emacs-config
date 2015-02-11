@@ -36,9 +36,7 @@
 ; 比如C-o 3dd C-o dib C-o yy C-o p C-o f * 舒服啊~发挥想象力吧 "')
 (define-key evil-emacs-state-map (kbd "C-o") 'evil-execute-in-normal-state) 
 
-; defualt invoke evil-jump-to-tag
-(define-key evil-normal-state-map (kbd "C-]") 'semantic-goto-definition)
-; defualt invoke evil-jump-backward
-(define-key evil-normal-state-map (kbd "C-o") 'semantic-pop-tag-mark)
+;(define-key evil-normal-state-map (kbd "C-]") 'semantic-goto-definition)
+;(define-key evil-normal-state-map (kbd "C-o") 'semantic-pop-tag-mark)
 
 (provide 'setup-evil)

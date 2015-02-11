@@ -40,6 +40,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;; install packages
 (defconst PACKAGES-INIT
   '(autopair
+	color-theme
 	auto-complete
 	auto-complete-c-headers
 	ecb
@@ -59,6 +60,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (install-packages)
 	
 
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-dark-blue2)
 ;; trun on autopair mode
 (require 'autopair)
 (autopair-global-mode)

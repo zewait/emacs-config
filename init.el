@@ -70,7 +70,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-dark-blue2)
+(color-theme-tty-dark)
 ;; trun on autopair mode
 (require 'autopair)
 (autopair-global-mode)
@@ -109,6 +109,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;; cedet
 ;;=======
 (require 'setup-cedet)
+(semantic-mode 1)
 
 (mapcar 'semantic-add-system-include SYSTEM-C-HEADERS)
 
@@ -139,3 +140,22 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;(require 'ecb-autoloads)
 
 
+;; JDE
+(require 'setup-jde)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(jde-global-classpath (quote ("$JAVA_HOME/jre/lib" "$JAVA_HOME/lib")))
+ '(jde-help-docsets (quote ((nil "http://docs.oracle.com/javase/8/docs/api" "1.8") (nil "http://docs.oracle.com/javase/7/docs/api" "1.7") (nil "http://docs.oracle.com/javase/6/docs/api" "1.6") (nil "http://docs.oracle.com/j2se/1.5.0/docs/api" "1.5"))))
+ '(jde-jdk-registry (quote (("1.8" . "$JAVA_HOME"))))
+ '(jde-sourcepath (quote ("$JAVA_HOME/src" "." "./src"))))
+
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -57,7 +57,10 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	iedit
 	undo-tree
 	evil
-	yasnippet))
+	yasnippet
+	js2-mode
+	ac-js2
+	web-beautify))
 
 (defun install-packages ()
   "Install all required packages."
@@ -70,7 +73,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (install-packages)
 	
 
-;(require 'compile)
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-tty-dark)
@@ -86,6 +88,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ; start yasnippet with emacs
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(require 'setup-js)
 
 ; Fix iedit bug in Mac
 (define-key global-map (kbd "C-c ;") 'iedit-mode)

@@ -72,7 +72,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	  (package-install package))))
 (install-packages)
 	
-
+(require 'exec-path-from-shell)
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-tty-dark)

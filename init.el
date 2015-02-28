@@ -7,6 +7,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (defvar semantic-tags-location-ring (make-ring 20))
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+
 
 ;;==============
 ;; global method
@@ -28,7 +30,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;; this is intended for manually installed libraries
-(add-to-list 'load-path "~/.emacs.d/site-lisp/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp")
 ;; show line num
 ;(global-linum-mode)
 
@@ -68,6 +70,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (install-packages)
 	
 
+;(require 'compile)
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-tty-dark)
@@ -108,8 +111,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;;=======
 ;; cedet
 ;;=======
-
-(load-file "~/.emacs.d/cedet/cedet-devel-load.el")
 (require 'setup-cedet)
 
 (semantic-mode 1)
@@ -144,21 +145,21 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 ;; JDE
-;(require 'setup-jde)
-;(custom-set-variables
+(require 'setup-jde)
+(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-; '(jde-global-classpath (quote ("$JAVA_HOME/jre/lib" "$JAVA_HOME/lib")))
-; '(jde-help-docsets (quote ((nil "http://docs.oracle.com/javase/8/docs/api" "1.8") (nil "http://docs.oracle.com/javase/7/docs/api" "1.7") (nil "http://docs.oracle.com/javase/6/docs/api" "1.6") (nil "http://docs.oracle.com/j2se/1.5.0/docs/api" "1.5"))))
-; '(jde-jdk-registry (quote (("1.8" . "$JAVA_HOME"))))
-; '(jde-sourcepath (quote ("$JAVA_HOME/src" "." "./src"))))
+ '(jde-global-classpath (quote ("$JAVA_HOME/jre/lib" "$JAVA_HOME/lib")))
+ '(jde-help-docsets (quote ((nil "http://docs.oracle.com/javase/8/docs/api" "1.8") (nil "http://docs.oracle.com/javase/7/docs/api" "1.7") (nil "http://docs.oracle.com/javase/6/docs/api" "1.6") (nil "http://docs.oracle.com/j2se/1.5.0/docs/api" "1.5"))))
+ '(jde-jdk-registry (quote (("1.8" . "$JAVA_HOME"))))
+ '(jde-sourcepath (quote ("$JAVA_HOME/src" "." "./src"))))
 
 
-;(custom-set-faces
+(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-; )
+ )

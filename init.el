@@ -60,7 +60,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	yasnippet
 	js2-mode
 	ac-js2
-	web-beautify))
+	web-beautify
+	markdown-mode
+	markdown-mode+))
 
 (defun install-packages ()
   "Install all required packages."
@@ -73,6 +75,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (install-packages)
 	
 (require 'exec-path-from-shell)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-tty-dark)
@@ -147,6 +151,14 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'ecb)
 ;(require 'ecb-autoloads)
 
+
+;; livedown
+; must npm install -g livedown
+(custom-set-variables
+ '(livedown:autostart nil) ; automatically open preview when opening markdown files
+ '(livedown:open t) ; automatically open the browser window
+ '(livedown:port 1337)) ; port for livedown server
+(require 'livedown)
 
 ;; JDE
 (require 'setup-jde)

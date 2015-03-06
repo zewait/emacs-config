@@ -1,3 +1,6 @@
+;;; package --- init
+;;; Commentary:
+;;; Code:
 ;;==========
 ;; constant
 ;;==========
@@ -23,9 +26,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
       c-basic-offset 4
 	  tab-width 4)
 (setq-default tab-width 4 indent-tabs-mode t)
-;; automatic indentation                                                
+;; automatic indentation
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
-;; which will delete all characters until next non-whitespace when you delete whitespace                                                        
+;; which will delete all characters until next non-whitespace when you delete whitespace
 (add-hook 'c-mode-common-hook'(lambda () (c-toggle-hungry-state 1)))
 
 (add-to-list 'load-path "~/.emacs.d/custom")
@@ -62,7 +65,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	ac-js2
 	web-beautify
 	markdown-mode
-	markdown-mode+))
+	markdown-mode+
+	flycheck))
 
 (defun install-packages ()
   "Install all required packages."
@@ -135,7 +139,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 						 (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 ; let's define a function which adds semantic as a suggestion backend to auto complete
 ; and hook this function to c-mode-common-hook
-(defun my:add-semantic-to-autocomplete() 
+(defun my:add-semantic-to-autocomplete()
   (add-to-list 'ac-sources 'ac-source-semantic)
 )
 (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
@@ -161,6 +165,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'livedown)
 
 
+;; flycheck
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
 ;; JDE
 (require 'setup-jde)
 (custom-set-variables
@@ -180,3 +187,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(provide 'init)
+;;; init.el ends here

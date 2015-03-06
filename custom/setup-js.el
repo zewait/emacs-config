@@ -19,7 +19,8 @@
 ;; if you don't like circles after object's own properties consider less annoying marker for that purpose
 ;(setq company-tern-property-marker "")
 ;; you can trim too long function signatures to the frame width
-(setq company-tern-meta-as-single-line t)
+;(setq company-tern-meta-as-single-line t)
+;(setq company-tooltip-align-annotations t)
 ;; when you modify .tern-project file but Tern does not auto reload,
 ;; you need to manually kill Tern server
 (defun delete-tern-process ()

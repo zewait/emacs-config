@@ -66,7 +66,10 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	web-beautify
 	markdown-mode
 	markdown-mode+
-	flycheck))
+	flycheck
+	tern
+	tern-auto-complete
+	company-tern))
 
 (defun install-packages ()
   "Install all required packages."
@@ -78,6 +81,12 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	  (package-install package))))
 (install-packages)
 	
+
+;; flycheck
+(add-hook 'after-init-hook 'global-flycheck-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+
+
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
@@ -99,8 +108,15 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (require 'setup-js)
 
+;; nyan
+(require 'nyan-mode)
+(nyan-mode)
+(setq nyan-bar-length 10)
+
+
 ; Fix iedit bug in Mac
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
+
 
 
 ; start auto-complete with emacs
@@ -165,8 +181,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'livedown)
 
 
-;; flycheck
-(add-hook 'after-init-hook 'global-flycheck-mode)
+
 
 ;; JDE
 (require 'setup-jde)

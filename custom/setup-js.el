@@ -15,7 +15,9 @@
   '(progn
 	 (require 'tern-auto-complete)
 	 (tern-ac-setup)))
-(add-to-list 'company-backends 'company-tern)
+(with-eval-after-load 'company
+				 (add-to-list 'company-backends 'company-tern))
+
 ;; if you don't like circles after object's own properties consider less annoying marker for that purpose
 ;(setq company-tern-property-marker "")
 ;; you can trim too long function signatures to the frame width

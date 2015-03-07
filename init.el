@@ -52,6 +52,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;; install packages
 (defconst PACKAGES-INIT
   '(autopair
+	company
+	nyan-mode
 	color-theme
 	ac-c-headers
 	auto-complete
@@ -69,6 +71,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	flycheck
 	tern
 	tern-auto-complete
+	helm
+	ac-helm
+	ac-etags
 	company-tern))
 
 (defun install-packages ()
@@ -84,7 +89,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; flycheck
 (add-hook 'after-init-hook 'global-flycheck-mode)
-(add-hook 'after-init-hook 'global-company-mode)
+;(add-hook 'after-init-hook 'global-company-mode)
 
 
 (require 'exec-path-from-shell)
@@ -106,7 +111,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(require 'setup-js)
 
 ;; nyan
 (require 'nyan-mode)
@@ -181,7 +185,22 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'livedown)
 
 
+;; setup javascript
+(require 'setup-js)
 
+;; helm
+(require 'helm-config)
+;(helm-mode 1)
+;; ac-helm
+(require 'ac-helm)
+
+;; ac-etags
+(custom-set-variables '(ac-etags-requires 1))
+(eval-after-load "etags"
+  '(progn (ac-etags-setup)))
+(add-hook 'c-mode-common-hook 'ac-etags-ac-setup)
+(add-hook 'javascript-mode-common-hook 'ac-etags-ac-setup)
+(add-hook 'ruby-mode-common-hook 'ac-etags-ac-setup)
 
 ;; JDE
 (require 'setup-jde)

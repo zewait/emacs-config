@@ -58,6 +58,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	ac-c-headers
 	auto-complete
 	auto-complete-c-headers
+	ggtags
 	ecb
 	iedit
 	undo-tree
@@ -125,11 +126,15 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ; start auto-complete with emacs
 (require 'auto-complete)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 (require 'ac-c-headers)
 (require 'auto-complete-config)
 ; do default config for auto-complete
 (require 'auto-complete-c-headers)
-(ac-config-default)
 ; auto-complete-c-headers
 (defun my:ac-c-header-init ()
   (add-to-list 'ac-sources 'ac-source-c-headers)
@@ -138,7 +143,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 		(add-to-list 'achead:include-directories x)))
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
-
 
 ;;=======
 ;; cedet

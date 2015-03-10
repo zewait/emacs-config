@@ -88,6 +88,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (install-packages)
 	
 
+(tool-bar-mode -1)
 ;; flycheck
 (add-hook 'after-init-hook 'global-flycheck-mode)
 ;(add-hook 'after-init-hook 'global-company-mode)
@@ -144,36 +145,26 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
 
+(require 'setup-ggtags)
+
 ;;=======
 ;; cedet
 ;;=======
-(require 'setup-cedet)
-
-(semantic-mode 1)
-
-(mapcar 'semantic-add-system-include SYSTEM-C-HEADERS)
-
-
-(add-hook 'c-mode-hook (lambda ()
-						 (add-to-list 'ac-sources 'ac-source-c-headers)
-						 (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
-
-(add-hook 'c++-mode-hook (lambda ()
-						 (add-to-list 'ac-sources 'ac-source-c-headers)
-						 (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+;(require 'setup-cedet)
+;(semantic-mode 1)
+;(mapcar 'semantic-add-system-include SYSTEM-C-HEADERS)
+;(add-hook 'c-mode-hook (lambda ()
+;						 (add-to-list 'ac-sources 'ac-source-c-headers)
+;						 (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+;(add-hook 'c++-mode-hook (lambda ()
+;						 (add-to-list 'ac-sources 'ac-source-c-headers)
+;						 (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 ; let's define a function which adds semantic as a suggestion backend to auto complete
 ; and hook this function to c-mode-common-hook
-(defun my:add-semantic-to-autocomplete()
-  (add-to-list 'ac-sources 'ac-source-semantic)
-)
-(add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
-
-;; ede config
-; create a project for our program.
-;(ede-cpp-root-project "my project" :file "~/Documents/workspace/cpp/demos/my_program/src/main.cpp"
-	;	            :include-path '("/../my_inc"))
-; you can use system-include-path for setting up the system header file locations.
-; turn on automatic reparsing of open buffers in semantic
+;(defun my:add-semantic-to-autocomplete()
+  ;(add-to-list 'ac-sources 'ac-source-semantic)
+;)
+;(add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
 
 ;; ecb
 (require 'ecb)

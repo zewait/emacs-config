@@ -59,10 +59,6 @@
   (local-set-key "\C-c\C-r" 'semantic-symref)
   )
 (add-hook 'c-mode-common-hook 'alexott/c-mode-cedet-hook)
-(add-hook 'c-mode-common-hook
-		  (lambda ()
-			(when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-			  (ggtags-mode 1))))
 
 (semanticdb-enable-gnu-global-databases 'c-mode t)
 (semanticdb-enable-gnu-global-databases 'c++-mode t)

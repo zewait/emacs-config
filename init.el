@@ -219,3 +219,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (provide 'init)
 ;;; init.el ends here
+
+
+
+
+;;; my function
+(require 'setup-cocos2d)

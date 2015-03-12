@@ -102,3 +102,38 @@
 (setq loop-list '("a" "b" "c"))
 (loop for x in loop-list do
 	  (insert (format "%s\n" x)))
+
+
+(defun foo()
+  (interactive)
+  (insert "add"))
+
+(defun read-dir (&optional dir)
+  (interactive)
+  (insert "go"))
+
+
+(defun blog-example ()
+  (interactive)
+  (with-output-to-temp-buffer "*blog-example*")
+  (shell-command "echo This is an example"
+				 "*blog-example*"
+				 "*Message*")
+  (pop-to-buffer "*blog-example*"))
+
+
+(defun example2 ()
+  (interactive)
+  (when (and (buffer-modified-p)
+			 (y-or-n-p (format "Save file %s?" (buffer-file-name))))
+	  (save-buffer))
+  (with-output-to-temp-buffer "*blog-example*"
+	(shell-command (concat "wc -l"
+						   " "
+						   (expand-file-name (buffer-file-name)))
+				   "*blog-example*"
+				   "*Messages*")
+	(pop-to-buffer "*blog-example*")))
+
+
+()

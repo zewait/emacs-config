@@ -1,4 +1,4 @@
-;;; package --- summary
+;;; package --- provide everything about cocos2d
 ;;; Commentary:
 ;;; Code:
 (require 'ggtags)
@@ -17,11 +17,11 @@
 					   "*Messages*")
 		))
 
-
-(defun cocos2dx-run-with-ios ()
-  "Run cocos2dx with iOS platform."
-  (interactive)
-  (cocos2dx-run-with-platform "ios"))
+;;; has & to run background, so can't use
+;(defun cocos2dx-run-with-ios ()
+;  "Run cocos2dx with iOS platform."
+;  (interactive)
+;  (cocos2dx-run-with-platform "ios"))
 
 
 (defun cocos2dx-run-with-mac ()

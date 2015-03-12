@@ -34,8 +34,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;; this is intended for manually installed libraries
 (add-to-list 'load-path "~/.emacs.d/site-lisp")
-;; show line num
-;(global-linum-mode)
 
 ; start package.el with emacs
 (require 'package)
@@ -97,9 +95,12 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-tty-dark)
+
+(require 'setup-linum)
 ;; trun on autopair mode
 (require 'autopair)
 (autopair-global-mode)

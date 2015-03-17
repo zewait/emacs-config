@@ -109,6 +109,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (global-undo-tree-mode)
 ;; evil mode
 (require 'setup-evil)
+(require 'setup-org)
 
 ; start yasnippet with emacs
 (require 'yasnippet)

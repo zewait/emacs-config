@@ -70,8 +70,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	flycheck
 	tern
 	tern-auto-complete
-	helm
-	ac-helm
 	ac-etags
 	company-tern
 	emacs-eclim))
@@ -185,12 +183,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; setup javascript
 (require 'setup-js)
-
-;; helm
-;(require 'helm-config)
-;(helm-mode 1)
-;; ac-helm
-;(require 'ac-helm)
 
 ;; eclim
 (require 'setup-eclim)

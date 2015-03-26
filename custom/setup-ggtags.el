@@ -2,6 +2,7 @@
 ;;; commentary:
 ;;; code:
 (require 'ggtags)
+(require 'company-capf)
 
 (add-hook 'c-mode-common-hook
           (lambda ()

@@ -73,7 +73,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	helm
 	ac-helm
 	ac-etags
-	company-tern))
+	company-tern
+	emacs-eclim))
 
 (defun install-packages ()
   "Install all required packages."
@@ -186,38 +187,16 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'setup-js)
 
 ;; helm
-(require 'helm-config)
+;(require 'helm-config)
 ;(helm-mode 1)
 ;; ac-helm
-(require 'ac-helm)
+;(require 'ac-helm)
 
-;; ac-etags
-(custom-set-variables '(ac-etags-requires 1))
-(eval-after-load "etags"
-  '(progn (ac-etags-setup)))
-(add-hook 'c-mode-common-hook 'ac-etags-ac-setup)
-(add-hook 'javascript-mode-common-hook 'ac-etags-ac-setup)
-(add-hook 'ruby-mode-common-hook 'ac-etags-ac-setup)
+;; eclim
+(require 'setup-eclim)
 
-;; JDE
-(require 'setup-jde)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(jde-global-classpath (quote ("$JAVA_HOME/jre/lib" "$JAVA_HOME/lib")))
- '(jde-help-docsets (quote ((nil "http://docs.oracle.com/javase/8/docs/api" "1.8") (nil "http://docs.oracle.com/javase/7/docs/api" "1.7") (nil "http://docs.oracle.com/javase/6/docs/api" "1.6") (nil "http://docs.oracle.com/j2se/1.5.0/docs/api" "1.5"))))
- '(jde-jdk-registry (quote (("1.8" . "$JAVA_HOME"))))
- '(jde-sourcepath (quote ("$JAVA_HOME/src" "." "./src"))))
-
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;;; my function
+(require 'setup-cocos2d)
 
 (provide 'init)
 ;;; init.el ends here
@@ -225,5 +204,3 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 
-;;; my function
-(require 'setup-cocos2d)

@@ -12,7 +12,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
-
+(set-language-environment "UTF-8")
 ;;==============
 ;; global method
 ;;==============
@@ -127,24 +127,25 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 ; start auto-complete with emacs
-(require 'auto-complete)
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-config-default)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
-(require 'ac-c-headers)
-(require 'auto-complete-config)
+;(require 'auto-complete)
+;(require 'auto-complete-config)
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;(ac-config-default)
+;(ac-set-trigger-key "TAB")
+;(ac-set-trigger-key "<tab>")
+;(require 'ac-c-headers)
+;(require 'auto-complete-config)
 ; do default config for auto-complete
-(require 'auto-complete-c-headers)
+;(require 'auto-complete-c-headers)
 ; auto-complete-c-headers
-(defun my:ac-c-header-init ()
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
-  (loop for x in SYSTEM-C-HEADERS do
-		(add-to-list 'achead:include-directories x)))
-(add-hook 'c++-mode-hook 'my:ac-c-header-init)
-(add-hook 'c-mode-hook 'my:ac-c-header-init)
+;(defun my:ac-c-header-init ()
+;  (add-to-list 'ac-sources 'ac-source-c-headers)
+;  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
+;  (loop for x in SYSTEM-C-HEADERS do
+;		(add-to-list 'achead:include-directories x)))
+;(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+;(add-hook 'c-mode-hook 'my:ac-c-header-init)
+(global-company-mode t)
 
 (require 'setup-ggtags)
 

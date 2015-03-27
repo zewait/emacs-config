@@ -67,7 +67,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	web-beautify
 	markdown-mode
 	markdown-mode+
-	flycheck
 	tern
 	tern-auto-complete
 	ac-etags
@@ -112,8 +111,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'setup-org)
 
 ; start yasnippet with emacs
-(require 'yasnippet)
-(yas-global-mode 1)
+;;(require 'yasnippet)
+;;(yas-global-mode 1)
 
 
 ;; nyan

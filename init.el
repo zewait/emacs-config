@@ -74,6 +74,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	company-tern
 	emacs-eclim))
 
+
 (defun install-packages ()
   "Install all required packages."
   (interactive)
@@ -145,7 +146,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;		(add-to-list 'achead:include-directories x)))
 ;(add-hook 'c++-mode-hook 'my:ac-c-header-init)
 ;(add-hook 'c-mode-hook 'my:ac-c-header-init)
-(global-company-mode t)
+(require 'setup-company)
 
 (require 'setup-ggtags)
 

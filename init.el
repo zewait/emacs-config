@@ -71,7 +71,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	tern-auto-complete
 	ac-etags
 	company-tern
-	emacs-eclim))
+	emacs-eclim
+	company-jedi))
 
 
 (defun install-packages ()
@@ -146,6 +147,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;(add-hook 'c++-mode-hook 'my:ac-c-header-init)
 ;(add-hook 'c-mode-hook 'my:ac-c-header-init)
 (require 'setup-company)
+(require 'setup-python)
 
 (require 'setup-ggtags)
 

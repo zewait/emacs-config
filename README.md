@@ -11,7 +11,7 @@ git clone --recursive https://github.com/zewait/emacs-config.git
 ## Config
 * [eclim](http://www.skybert.net/emacs/java)
 
-> ~/.eclimrc
+> ~/.eclimrc  
 > \#workspace dir
 > osgi.instance.area.default=@user.home/workspace/eclipse
 > 

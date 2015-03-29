@@ -13,6 +13,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
 (set-language-environment "UTF-8")
+(setq debug-on-error t)
 ;;==============
 ;; global method
 ;;==============
@@ -38,9 +39,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ; start package.el with emacs
 (require 'package)
 ; add MELPA to repository list
-(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
-				 ("gnu" . "http://elpa.gnu.org/packages/")
-				 ("marmalade" . "https://marmalade-repo.org/packages/")))
+;("marmalade" . "https://marmalade-repo.org/packages/")
+;("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")))
 ;; Install a hook running post-init.el *after* initialization took place
 ;(add-hook 'after-init-hook (lambda () (load "post-init.el")))
 
@@ -72,7 +73,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	ac-etags
 	company-tern
 	emacs-eclim
-	company-jedi))
+	company-jedi
+	jsx-mode
+	weibo))
 
 
 (defun install-packages ()
@@ -128,25 +131,29 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 ; start auto-complete with emacs
-;(require 'auto-complete)
-;(require 'auto-complete-config)
-;(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-;(ac-config-default)
-;(ac-set-trigger-key "TAB")
-;(ac-set-trigger-key "<tab>")
-;(require 'ac-c-headers)
-;(require 'auto-complete-config)
+(require 'auto-complete)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
+(require 'ac-c-headers)
 ; do default config for auto-complete
-;(require 'auto-complete-c-headers)
+(require 'auto-complete-c-headers)
 ; auto-complete-c-headers
-;(defun my:ac-c-header-init ()
-;  (add-to-list 'ac-sources 'ac-source-c-headers)
-;  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
-;  (loop for x in SYSTEM-C-HEADERS do
-;		(add-to-list 'achead:include-directories x)))
-;(add-hook 'c++-mode-hook 'my:ac-c-header-init)
-;(add-hook 'c-mode-hook 'my:ac-c-header-init)
-(require 'setup-company)
+(defun my:ac-c-header-init ()
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)
+  (loop for x in SYSTEM-C-HEADERS do
+		(add-to-list 'achead:include-directories x)))
+(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+(add-hook 'c-mode-hook 'my:ac-c-header-init)
+;; setup auto-complete to lisp
+;(add-hook 'emacs-lisp-mode-hook (lambda () (auto-complete-mode 1)))
+;(add-hook 'lisp-mode-hook (lambda () (auto-complete-mode 1)))
+
+;(require 'setup-company)
+
 (require 'setup-python)
 
 (require 'setup-ggtags)
@@ -189,6 +196,11 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; eclim
 (require 'setup-eclim)
+
+;; weibo
+(require 'weibo)
+(setq weibo-consumer-key "3439580880")
+(setq weibo-consumer-secret "c1cc2443c3e7dd1a0dca7a8e941eb161")
 
 ;;; my function
 (require 'setup-cocos2d)

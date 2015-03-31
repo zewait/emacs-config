@@ -24,8 +24,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;;=============
 (require 'cc-mode)
 (setq c-default-style "linux"
-      c-basic-offset 4
-	  tab-width 4)
+      c-basic-offset 4)
 (setq-default tab-width 4 indent-tabs-mode t)
 ;; automatic indentation
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
@@ -75,7 +74,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	emacs-eclim
 	company-jedi
 	jsx-mode
-	weibo))
+	weibo
+	web-mode))
 
 
 (defun install-packages ()
@@ -91,7 +91,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (tool-bar-mode -1)
 ;; flycheck
-(add-hook 'after-init-hook 'global-flycheck-mode)
+;(add-hook 'after-init-hook 'global-flycheck-mode)
 ;(add-hook 'after-init-hook 'global-company-mode)
 
 
@@ -135,8 +135,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+;(ac-set-trigger-key "TAB")
+;(ac-set-trigger-key "<tab>")
 (require 'ac-c-headers)
 ; do default config for auto-complete
 (require 'auto-complete-c-headers)
@@ -185,12 +185,21 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;; livedown
 ; must npm install -g livedown
 (custom-set-variables
- '(livedown:autostart nil) ; automatically open preview when opening markdown files
- '(livedown:open t) ; automatically open the browser window
- '(livedown:port 1337)) ; port for livedown server
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(eclim-eclipse-dirs (concat (getenv "ECLIPSE_HOME") "/eclipse"))
+ '(eclim-executeable (concat (getenv "ECLIPSE_HOME") "/eclim"))
+ '(livedown:autostart nil)
+ '(livedown:open t)
+ '(livedown:port 1337)
+ '(tab-width 2))
+ ; port for livedown server
 (require 'livedown)
 
 
+(require 'setup-web)
 ;; setup javascript
 (require 'setup-js)
 
@@ -211,3 +220,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

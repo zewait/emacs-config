@@ -19,8 +19,8 @@
   '(progn
 	 (require 'tern-auto-complete)
 	 (tern-ac-setup)))
-(with-eval-after-load 'company
-				 (add-to-list 'company-backends 'company-tern))
+;(with-eval-after-load 'company
+;				 (add-to-list 'company-backends 'company-tern))
 
 ;; if you don't like circles after object's own properties consider less annoying marker for that purpose
 ;(setq company-tern-property-marker "")

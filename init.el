@@ -33,7 +33,14 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;; this is intended for manually installed libraries
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(let ((base "~/.emacs.d/site-lisp"))
+	(add-to-list 'load-path base)
+	(dolist (f (directory-files base))
+		(let ((name (concat base "/" f)))
+			(when (and (file-directory-p name)
+								 (not (equal f ".."))
+								 (not (equal f ".")))
+				(add-to-list 'load-path name)))))
 
 ; start package.el with emacs
 (require 'package)
@@ -120,9 +127,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 ;; nyan
-(require 'nyan-mode)
-(nyan-mode)
-(setq nyan-bar-length 10)
+;(require 'nyan-mode)
+;(nyan-mode)
+;(setq nyan-bar-length 10)
 
 
 ; Fix iedit bug in Mac

@@ -14,6 +14,13 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 (set-language-environment "UTF-8")
 (setq debug-on-error t)
+
+
+;;===============
+;; global key set
+;;===============
+(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+
 ;;==============
 ;; global method
 ;;==============
@@ -27,7 +34,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
       c-basic-offset 4)
 (setq-default tab-width 4 indent-tabs-mode t)
 ;; automatic indentation
-(define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
+;(define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 ;; which will delete all characters until next non-whitespace when you delete whitespace
 (add-hook 'c-mode-common-hook'(lambda () (c-toggle-hungry-state 1)))
 
@@ -98,6 +105,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	
 
 (tool-bar-mode -1)
+(electric-pair-mode t)
+(global-hl-line-mode t)
 ;; flycheck
 ;(add-hook 'after-init-hook 'global-flycheck-mode)
 ;(add-hook 'after-init-hook 'global-company-mode)
@@ -198,14 +207,12 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(eclim-eclipse-dirs (concat (getenv "ECLIPSE_HOME") "/eclipse"))
- '(eclim-executeable (concat (getenv "ECLIPSE_HOME") "/eclim"))
  '(livedown:autostart nil)
  '(livedown:open t)
- '(livedown:port 1337)
- '(tab-width 2))
+ '(livedown:port 1337))
  ; port for livedown server
 (require 'livedown)
+
 
 
 (require 'setup-web)

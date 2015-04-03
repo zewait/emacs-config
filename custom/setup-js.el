@@ -4,13 +4,14 @@
 ;; `sudo npm -g install jshint` to support flycheck on js-mode
 ;; `sudo npm -g install jsxhint` to support flycheck on jsx-mode
 ;; `sudo npm -g install tern` to support a stand-alone code-analysis engine for js
-(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 
 ;; tab-width
-(setq js-indent-level 4)
-(setq js2-highlight-level 4)
+(setq js-indent-level 2)
+(setq js2-highlight-lerel 2)
 
 ;; Tern
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))

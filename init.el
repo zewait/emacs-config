@@ -25,7 +25,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'cc-mode)
 (setq c-default-style "linux"
       c-basic-offset 4)
-(setq )
 (setq-default tab-width 4 indent-tabs-mode t)
 ;; automatic indentation
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
@@ -57,8 +56,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; install packages
 (defconst PACKAGES-INIT
-  '(autopair
-	company
+  '(company
 	nyan-mode
 	color-theme
 	ac-c-headers
@@ -114,9 +112,6 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (color-theme-tty-dark)
 
 (require 'setup-linum)
-;; trun on autopair mode
-(require 'autopair)
-(autopair-global-mode)
 ;; trun on undo-tree mode
 (require 'undo-tree)
 (global-undo-tree-mode)
@@ -221,7 +216,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'setup-eclim)
 
 ;; iOS
-(require 'setup-ios)
+;(require 'setup-ios)
 
 ;; weibo
 (require 'weibo)

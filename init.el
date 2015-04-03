@@ -25,6 +25,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'cc-mode)
 (setq c-default-style "linux"
       c-basic-offset 4)
+(setq )
 (setq-default tab-width 4 indent-tabs-mode t)
 ;; automatic indentation
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
@@ -82,7 +83,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	company-jedi
 	jsx-mode
 	weibo
-	web-mode))
+	web-mode
+	emmet-mode
+	anything))
 
 
 (defun install-packages ()
@@ -121,9 +124,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'setup-evil)
 (require 'setup-org)
 
-; start yasnippet with emacs
-;;(require 'yasnippet)
-;;(yas-global-mode 1)
+;; start yasnippet with emacs
+(require 'yasnippet)
+(yas-global-mode 1)
 
 
 ;; nyan
@@ -141,9 +144,10 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;(setq-default ac-sources '(ac-source-yasnippet ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (ac-config-default)
-;(ac-set-trigger-key "TAB")
-;(ac-set-trigger-key "<tab>")
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 (require 'ac-c-headers)
 ; do default config for auto-complete
 (require 'auto-complete-c-headers)
@@ -155,9 +159,12 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 		(add-to-list 'achead:include-directories x)))
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
-;; setup auto-complete to lisp
-;(add-hook 'emacs-lisp-mode-hook (lambda () (auto-complete-mode 1)))
-;(add-hook 'lisp-mode-hook (lambda () (auto-complete-mode 1)))
+(add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
+(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+(add-hook 'ruby-mode-hook 'ac-ruby-mode-setup)
+(add-hook 'css-mode-hook 'ac-css-mode-setup)
+(add-hook 'auto-complete-mode 'ac-common-setup)
+(add-to-list 'ac-modes 'objc-mode)
 
 ;(require 'setup-company)
 
@@ -212,6 +219,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; eclim
 (require 'setup-eclim)
+
+;; iOS
+(require 'setup-ios)
 
 ;; weibo
 (require 'weibo)

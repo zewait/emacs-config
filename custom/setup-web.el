@@ -11,7 +11,7 @@
 		ad-do-it))
 
 
-(setq web-mode-enable-current-column-highlight t)
+;g(setq web-mode-enable-current-column-highlight t)
 (setq web-mode-ac-sources-alist
 			'(("css" . (ac-source-css-property))
 				("html" . (ac-source-words-in-buffer ac-source-abbrev))))

@@ -13,10 +13,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
 ;(setq debug-on-error t)
-(setq tab-width 4)
-(setq-default indent-tabs-mode nil)
-(set-language-environment "UTF-8")
-(defvaralias 'evil-shift-width 'tab-width)
+
+
 
 
 ;;===============
@@ -93,8 +91,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	weibo
 	web-mode
 	emmet-mode
-	anything
-        indent-guide))
+	anything))
 
 
 (defun install-packages ()
@@ -229,14 +226,10 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 ;; iOS
 ;(require 'setup-ios)
 
-;; indent-guide
-(indent-guide-global-mode)
-
 ;; weibo
 (require 'weibo)
 (setq weibo-consumer-key "3439580880")
 (setq weibo-consumer-secret "c1cc2443c3e7dd1a0dca7a8e941eb161")
-
 
 ;;; my function
 (require 'setup-cocos2d)

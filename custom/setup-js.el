@@ -14,8 +14,12 @@
 (setq js2-highlight-lerel 2)
 
 ;; Tern
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
+(defun my-js-hook()
+  (setq tab-width 2)
+  (tern-mode t))
+(add-hook 'js-mode-hook 'my-js-hook)
+(add-hook 'js2-mode-hook 'my-js-hook)
+(add-hook 'jsx-mode-hook 'my-js-hook)
 (eval-after-load 'tern
   '(progn
 	 (require 'tern-auto-complete)

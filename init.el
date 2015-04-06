@@ -13,16 +13,15 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
 
 ;(setq debug-on-error t)
-(setq tab-width 4)
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode t)
 (set-language-environment "UTF-8")
 (defvaralias 'evil-shift-width 'tab-width)
-
 
 ;;===============
 ;; global key set
 ;;===============
-(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;;==============
 ;; global method
@@ -37,7 +36,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
       c-basic-offset 4
 	)
 ;; automatic indentation
-;(define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
+(define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 ;; which will delete all characters until next non-whitespace when you delete whitespace
 (add-hook 'c-mode-common-hook'(lambda () (c-toggle-hungry-state 1)))
 
@@ -94,7 +93,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 	web-mode
 	emmet-mode
 	anything
-        indent-guide))
+	indent-guide
+	emms))
 
 
 (defun install-packages ()
@@ -133,8 +133,8 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (require 'setup-org)
 
 ;; start yasnippet with emacs
-(require 'yasnippet)
-(yas-global-mode 1)
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
 
 ;; nyan
@@ -147,15 +147,14 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 
 
-
 ; start auto-complete with emacs
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 ;(setq-default ac-sources '(ac-source-yasnippet ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
 (ac-config-default)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+;(ac-set-trigger-key "TAB")
+;(ac-set-trigger-key "<tab>")
 (require 'ac-c-headers)
 ; do default config for auto-complete
 (require 'auto-complete-c-headers)
@@ -206,18 +205,7 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; livedown
 ; must npm install -g livedown
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(livedown:autostart nil)
- '(livedown:open t)
- '(livedown:port 1337))
- ; port for livedown server
 (require 'livedown)
-
-
 
 (require 'setup-web)
 ;; setup javascript
@@ -231,6 +219,9 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 ;; indent-guide
 (indent-guide-global-mode)
+
+(require 'setup-media)
+
 
 ;; weibo
 (require 'weibo)
@@ -247,6 +238,17 @@ s/XcodeDefault.xctoolchain/usr/include/c++/v1" "/usr/local/include" "Application
 
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(eclim-eclipse-dirs (concat (getenv "ECLIPSE_HOME") "/eclipse"))
+ '(eclim-executeable (concat (getenv "ECLIPSE_HOME") "/eclim"))
+ '(livedown:autostart nil)
+ '(livedown:open t)
+ '(livedown:port 1337)
+ '(tab-width 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

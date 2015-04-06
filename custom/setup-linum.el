@@ -1,5 +1,5 @@
 ;;; package --- summary
-;;; Commentary:
+;;; Commentary: 
 ;;; code:
 
 (column-number-mode 1)

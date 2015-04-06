@@ -12,6 +12,7 @@
 ;; tab-width
 (setq js-indent-level 2)
 (setq js2-highlight-lerel 2)
+(setq js2-basic-offset 2)
 
 ;; Tern
 (defun my-js-hook()

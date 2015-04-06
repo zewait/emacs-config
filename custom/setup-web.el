@@ -1,4 +1,12 @@
 (require 'web-mode)
+
+(setq web-mode-attr-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-html-offset 2)
+(setq web-mode-css-offset 2)
+(setq web-mode-script-offset 2)
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-sql-indent-offset 2)
 ;(setq web-mode-content-types-alist
 ;			'(("jsx" . "\\.ios\\.js\\'")))
 ;(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -18,10 +26,7 @@
 
 (defun my/web-mode-hook ()
   "Hooks for web mode."
-	(local-set-key (kbd "RET") 'newline-and-indent)
-	(setq web-mode-html-offset 2)
-	(setq web-mode-css-offset 2)
-	(setq web-mode-script-offset 2)
+    (setq tab-width 2)
 	(require 'emmet-mode)
 	(emmet-mode t))
 (add-hook 'web-mode-hook 'my/web-mode-hook)

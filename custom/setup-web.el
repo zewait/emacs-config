@@ -7,6 +7,7 @@
 (setq web-mode-script-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-sql-indent-offset 2)
+
 ;(setq web-mode-content-types-alist
 ;			'(("jsx" . "\\.ios\\.js\\'")))
 ;(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -30,12 +31,17 @@
 	(require 'emmet-mode)
 	(emmet-mode t))
 (add-hook 'web-mode-hook 'my/web-mode-hook)
-(add-hook 'emmet-mode-hook (lambda () (setq emmet-indent-after-insert nil)))
+(add-hook 'emmet-mode-hook (lambda ()
+                             ;(setq emmet-indent-after-insert nil)
+                             (setq emmet-indentation 2)))
 (add-hook 'web-mode-before-auto-complete-hooks '(lambda ()
-																									(let ((web-mode-cur-language (web-mode-language-at-pos)))
-																										(if (string= web-mode-cur-language "css")
-																												(setq emmet-use-css-transform t)
-																											(setq emmet-use-css-transform nil)))))
+                                                  (let ((web-mode-cur-language (web-mode-language-at-pos)))
+                                                    (if (string= web-mode-cur-language "css")
+                                                        (setq emmet-use-css-transform t)
+													(setq emmet-use-css-transform nil)))))
+(add-hook 'css-mode-hook (lambda ()
+                           (setq tab-width 2)
+                           (setq css-indent-offset 2)))
 
 
 (provide 'setup-web)

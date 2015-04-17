@@ -3,6 +3,9 @@
 ;;; Code:
 (require 'ggtags)
 
+(define-key c-mode-map (kbd "C-c m") 'cocos2dx-run-with-mac)
+(define-key c++-mode-map (kbd "C-c m") 'cocos2dx-run-with-mac)
+
 (defun cocos2dx-run-with-platform (platform)
   "Run cocos2dx width PLATFORM, exec shell `cocos run -h` to see PLATFORM."
   (interactive "sEnter platform name:")

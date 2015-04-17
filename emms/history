@@ -1,9 +1,0 @@
-;;; emms history -*- mode: emacs-lisp; coding: utf-8; -*-
-(
-;; active playlist
-" *EMMS Playlist*"
-;; playlists: ((BUFFER_NAME SELECT_POSITION TRACKS) ...)
-((" *EMMS Playlist*" 1 ((*track* (type . file) (name . "/Users/shifanhuang/Music/my-list/老男孩.mp3") (metadata) (info-mtime 21793 64306 0 0)))))
-;; play method
-((emms-repeat-track) (emms-repeat-playlist))
-)

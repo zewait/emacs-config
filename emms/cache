@@ -1,2 +1,0 @@
-;;; .emms-cache -*- mode: emacs-lisp; coding: utf-8; -*-
-(puthash "/Users/shifanhuang/Music/my-list/老男孩.mp3" '(*track* (type . file) (name . "/Users/shifanhuang/Music/my-list/老男孩.mp3") (metadata) (info-mtime 21793 64306 0 0)) emms-cache-db)

@@ -121,8 +121,8 @@
 (require 'setup-org)
 
 ;; start yasnippet with emacs
-(require 'yasnippet)
-(yas-global-mode 1)
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
 
 ;; nyan
@@ -219,6 +219,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ecb-options-version "2.40")
  '(eclim-eclipse-dirs (concat (getenv "ECLIPSE_HOME") "/eclipse"))
  '(eclim-executeable (concat (getenv "ECLIPSE_HOME") "/eclim"))
  '(livedown:autostart nil)

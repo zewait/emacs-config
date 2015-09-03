@@ -7,10 +7,13 @@
 (setq web-mode-script-offset 2)
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-sql-indent-offset 2)
+(setq web-mode-content-types-alist
+      '(("jsx" . "**/*\\.react\\.js\\'")))
 
 ;(setq web-mode-content-types-alist
 ;			'(("jsx" . "\\.ios\\.js\\'")))
-;(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js[x]?$" . web-mode))
+;(add-to-list 'auto-mode-alist '("\\.react\\.js$" . web-mode))
 ;(add-to-list 'auto-mode-alist '("\\.ios.js$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.htm[l]?$" . web-mode))
 (defadvice web-mode-highlight-part (around tweak-jsx activate)

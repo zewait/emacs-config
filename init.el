@@ -18,7 +18,7 @@
 ;; global key set
 ;;===============
 ;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
-(global-set-key (kbd "RET") 'newline-and-indent)
+;(global-set-key (kbd "RET") 'newline-and-indent)
 
 ;;==============
 ;; global method
@@ -82,7 +82,8 @@
 	emmet-mode
 	anything
 	indent-guide
-	emms))
+	emms
+    scala-mode2))
 
 
 (defun install-packages ()
@@ -208,10 +209,16 @@
 
 (require 'setup-web)
 ;; setup javascript
-(require 'setup-js)
+;(require 'setup-js)
 
 ;;; my function
 (require 'setup-cocos2d)
+
+;;; setup scala
+(require 'scala-mode2)
+
+;;; setup sbt
+(require 'sbt-mode)
 
 
 (custom-set-variables
